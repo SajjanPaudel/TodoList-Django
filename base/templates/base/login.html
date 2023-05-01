@@ -1,0 +1,31 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+ <div style="height:100%;width:100%;display:inline-block">
+  <div class="splitdiv" id="leftdiv">
+      <div id="leftdivcard">
+        <h1 style="padding-top:20px;text-align:center">Sign In</h1>
+          <form method="POST">
+              {% csrf_token %}
+              {{form.as_p}}
+             <div style="text-align:center">
+            <button id="leftbutton" class="ripple2" type="submit" value="login">Login</button>
+    </div>
+            </form>
+      </div>
+
+
+  </div>
+    <div class="splitdiv" id="rightdiv">
+      <div id="rightdivcard">
+        <h1 style="padding-top:20px;text-align:center;color:white">Register Here if you don't already have an account</h1>
+        <p style="color:white;text-align:center">Do you want to manage your tasks more efficiently ? Just Register !</p>
+        <div style="text-align:center">
+            <button id="rightbutton" class="ripple" onclick="window.location.href={% url 'register' %}">Register</button>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+{% endblock content %}
