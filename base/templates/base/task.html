@@ -1,0 +1,26 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="task-container">
+    <div class="header-bar">
+        <h1 style="color:#FFF">Task: {{task}} </h1>
+    </div>
+    <div class="description">
+            <h2>
+                Description
+            </h2>
+        <hr>
+        <p>{{task.description}}</p>
+    </div>
+    <hr>
+    <div class="edit">
+        <button id="leftbutton" class="ripple2" type="submit" value="login">
+            <a href="{% url 'task-update' task.id %}">Edit</a>
+        </button>
+
+        <a href="{% url 'tasks' %}" id="go-back">Go back</a>
+
+    </div>
+</div>
+
+{% endblock content %}

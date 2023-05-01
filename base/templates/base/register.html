@@ -1,0 +1,32 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+ <div style="height:100%;width:100%;display:inline-block">
+  <div class="splitdiv" id="leftdiv">
+      <div id="leftdivcard">
+        <h1 style="padding-top:20px;text-align:center">Register</h1>
+          <form method="POST">
+              {% csrf_token %}
+              {{form.as_p}}
+             <div style="text-align:center">
+            <button id="leftbutton" class="ripple2" type="submit" value="Register">Login</button>
+    </div>
+            </form>
+      </div>
+
+
+  </div>
+    <div class="splitdiv" id="rightdiv">
+      <div id="rightdivcard">
+        <h1 style="padding-top:20px;text-align:center;color:white">Came here accidentally ?</h1>
+          <h1 style="padding-top:20px;text-align:center;color:white">Already have an account</h1>
+        <p style="color:white;text-align:center">Want to go back to the login page ? Just click login button!</p>
+        <div style="text-align:center">
+            <button id="rightbutton" class="ripple"><a href="{% url 'login' %}">Login</a></button>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+{% endblock content %}
